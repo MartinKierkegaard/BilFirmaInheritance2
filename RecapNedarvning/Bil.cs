@@ -28,12 +28,17 @@ namespace RecapNedarvning
         /// <returns></returns>
         public abstract int RækkeVidde();
 
+        //protected abstract int RækkeVidde1();
+
         /// <summary>
         /// beregner registreringsafgiften for bilen
         /// </summary>
         /// <returns></returns>
         public virtual int Registreringsafgift()
         {
+            //if (KøbsÅr < 2014)
+            //    throw new ArgumentException("Købsåret kan ikke være mindre end 2014 ");
+
             int pct105afgift2015 = 80500;
             int pct105afgift2016 = 81700;
 
@@ -46,7 +51,7 @@ namespace RecapNedarvning
                return beregnAfgift(pct105afgift2016);
             }
 
-            return 0;
+            //return 0;
         }
 
         /// <summary>
@@ -57,8 +62,13 @@ namespace RecapNedarvning
         /// <returns></returns>
         private int beregnAfgift(int minimumafgift)
         {
-            if (this.Pris <= 0)
-                return 0;
+            //if (this.Pris <= 0)
+            //{
+            //    throw new ArgumentException("prisen må ikke være <= 0");
+                 
+                //return 0;
+            //}
+
 
             if (this.Pris <= minimumafgift)
                 return Pris*105/100;
@@ -66,8 +76,8 @@ namespace RecapNedarvning
             int pct105 = 0;
             int pct180 = 0;
 
-            pct105 = minimumafgift;
-            pct180 = (this.Pris - minimumafgift)*180/100;
+            pct105 = minimumafgift * 105/100;
+            pct180 = (this.Pris - minimumafgift) * 180/100;
             return pct105 + pct180;
 
         }
