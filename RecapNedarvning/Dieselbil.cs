@@ -49,9 +49,10 @@ namespace RecapNedarvning
             {
                 partikelFilterAfgift = 1000;
             }
+
             if (this.KmPrLiter < 5)
             {
-                throw new ArgumentException("Bilen kører for kort på liter skal være over 5");
+                throw new GrønAfgiftException();
             }
 
             if (this.KmPrLiter >= 5 && this.KmPrLiter <= 15)
@@ -66,15 +67,6 @@ namespace RecapNedarvning
             {
                 return partikelFilterAfgift+1500;
             }
-
-
-            // her skal der beregnes noget grøn afgift
-
-            //if (afgift <= 0)
-            //{
-            //    throw new GrønAfgiftException();
-                
-            //}
         }
 
         /// <summary>

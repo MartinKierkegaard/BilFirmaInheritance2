@@ -35,8 +35,6 @@ namespace RecapNedarvningTests.Tests
             Assert.AreEqual(600, testbil.RækkeVidde());
         }
 
-
-
         /// <summary>
         /// tester at der bliver kastet en exception hvis under 5 km/l med partikelfilter
         /// </summary>
