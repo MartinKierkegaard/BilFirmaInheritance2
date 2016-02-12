@@ -36,8 +36,12 @@ namespace RecapNedarvning
         /// <returns></returns>
         public virtual int Registreringsafgift()
         {
-            //if (KøbsÅr < 2014)
-            //    throw new ArgumentException("Købsåret kan ikke være mindre end 2014 ");
+            if (KøbsÅr < 2014)
+                throw new ArgumentException("Købsåret kan ikke være mindre end 2014 ");
+
+            if (Pris <= 0)
+                throw new ArgumentException("Prisen må ikke være <= 0");
+
 
             int pct105afgift2015 = 80500;
             int pct105afgift2016 = 81700;
@@ -51,7 +55,6 @@ namespace RecapNedarvning
                return beregnAfgift(pct105afgift2016);
             }
 
-            //return 0;
         }
 
         /// <summary>
@@ -62,12 +65,12 @@ namespace RecapNedarvning
         /// <returns></returns>
         private int beregnAfgift(int minimumafgift)
         {
-            //if (this.Pris <= 0)
-            //{
-            //    throw new ArgumentException("prisen må ikke være <= 0");
-                 
+            if (this.Pris <= 0)
+            {
+                throw new ArgumentException("prisen må ikke være <= 0");
+
                 //return 0;
-            //}
+            }
 
 
             if (this.Pris <= minimumafgift)

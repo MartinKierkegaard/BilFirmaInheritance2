@@ -32,6 +32,8 @@ namespace RecapNedarvning
 
         public override int RækkeVidde()
         {
+            if (Tank <= 0 || KmPrLiter <=0)
+                throw new ArgumentException(String.Format("Værdien af tank eller KmprL skal være > 0. tank er : {0}, KmPrL er : {1} ",Tank,KmPrLiter));
             return Tank*KmPrLiter;
         }
 
