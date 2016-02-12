@@ -41,7 +41,7 @@ namespace RecapNedarvningTests.Tests
         /// tester at der bliver kastet en exception hvis under 5 km/l med partikelfilter
         /// </summary>
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
+        [ExpectedException(typeof(GrønAfgiftException))]
         public void TestDieselBil_mindreEnd5KMprL_GrønAfgift()
         {
             var bil = new Dieselbil(80500, 2015, 4, 30);
@@ -96,7 +96,7 @@ namespace RecapNedarvningTests.Tests
         /// tester at der bliver kastet en exception hvis under 5 km/l med partikelfilter
         /// </summary>
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
+        [ExpectedException(typeof(GrønAfgiftException))]
         public void TestDieselBil_mindreEnd5KMprL_IngenPartikelfilter_GrønAfgift()
         {
             var bil = new Dieselbil(80500, 2015, 4, 30, false);
