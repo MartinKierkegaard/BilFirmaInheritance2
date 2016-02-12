@@ -57,6 +57,10 @@ namespace RecapNedarvning
             {
                 return 4000;
             }
+            else
+            {
+                return 1500;
+            }
 
             if (PartikelFilter)
             {
