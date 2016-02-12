@@ -44,6 +44,11 @@ namespace RecapNedarvning
         {
             int afgift = 0;
 
+            if (this.KmPrLiter < 5)
+            {
+                throw new ArgumentException("Bilen kører for kort på liter skal være over 5");
+            }
+
             if (PartikelFilter)
             {
                 
