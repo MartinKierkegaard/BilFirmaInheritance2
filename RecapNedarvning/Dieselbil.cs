@@ -49,6 +49,11 @@ namespace RecapNedarvning
                 throw new ArgumentException("Bilen kører for kort på liter skal være over 5");
             }
 
+            if (this.KmPrLiter >= 5 && this.KmPrLiter <= 15)
+            {
+                return 8000;
+            }
+
             if (PartikelFilter)
             {
                 
