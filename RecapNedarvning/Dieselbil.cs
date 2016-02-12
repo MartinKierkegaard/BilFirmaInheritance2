@@ -42,8 +42,13 @@ namespace RecapNedarvning
         /// <returns></returns>
         public override int GrønAfgift()
         {
-            int afgift = 0;
+            int partikelFilterAfgift = 0;
 
+
+            if (!PartikelFilter)
+            {
+                partikelFilterAfgift = 1000;
+            }
             if (this.KmPrLiter < 5)
             {
                 throw new ArgumentException("Bilen kører for kort på liter skal være over 5");
@@ -51,21 +56,17 @@ namespace RecapNedarvning
 
             if (this.KmPrLiter >= 5 && this.KmPrLiter <= 15)
             {
-                return 8000;
+                return partikelFilterAfgift+8000;
             }
             if (this.KmPrLiter > 15 && this.KmPrLiter <= 25)
             {
-                return 4000;
+                return partikelFilterAfgift+4000;
             }
             else
             {
-                return 1500;
+                return partikelFilterAfgift+1500;
             }
 
-            if (PartikelFilter)
-            {
-                
-            }
 
             // her skal der beregnes noget grøn afgift
 
@@ -74,8 +75,6 @@ namespace RecapNedarvning
             //    throw new GrønAfgiftException();
                 
             //}
-
-            return base.GrønAfgift() + 1000;
         }
 
         /// <summary>

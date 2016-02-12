@@ -7,11 +7,17 @@ namespace RecapNedarvningTests.Tests
     [TestClass()]
     public class DieselbilTests
     {
+
+        [TestInitialize]
+        public void Init()
+        {
+            
+        }
+
         [TestMethod()]
         public void DieselbilTest()
         {
            var testbil = new Dieselbil(80500, 2015, 20, 30);
-
             Assert.AreEqual(84525,testbil.Registreringsafgift());
         }
        
@@ -103,8 +109,8 @@ namespace RecapNedarvningTests.Tests
         [TestMethod]
         public void TestDieselBil_5_til_15KMprL_IngenPartikelfilter_GrønAfgift()
         {
-            var bil5 = new Dieselbil(100500, 2015, 5, 30);
-            var bil15 = new Dieselbil(100500, 2015, 15, 30);
+            var bil5 = new Dieselbil(100500, 2015, 5, 30, false);
+            var bil15 = new Dieselbil(100500, 2015, 15, 30, false);
 
             Assert.AreEqual(bil5.GrønAfgift(), 9000);
             Assert.AreEqual(bil15.GrønAfgift(), 9000);
@@ -116,9 +122,9 @@ namespace RecapNedarvningTests.Tests
         [TestMethod]
         public void TestDieselBil_15_til_25KMprL_IngenPartikelfilter_GrønAfgift()
         {
-            var bil16 = new Dieselbil(100500, 2015, 16, 30);
-            var bil15 = new Dieselbil(100500, 2015, 15, 30);
-            var bil25 = new Dieselbil(100500, 2015, 25, 30);
+            var bil16 = new Dieselbil(100500, 2015, 16, 30, false);
+            var bil15 = new Dieselbil(100500, 2015, 15, 30, false);
+            var bil25 = new Dieselbil(100500, 2015, 25, 30, false);
 
             Assert.AreEqual(bil15.GrønAfgift(), 9000); //tester grænsen
             Assert.AreEqual(bil16.GrønAfgift(), 5000);
@@ -131,9 +137,9 @@ namespace RecapNedarvningTests.Tests
         [TestMethod]
         public void TestDieselBil_størrerEnd25KMprL_IngenPartikelfilter_GrønAfgift()
         {
-            var bil25 = new Dieselbil(100500, 2015, 25, 30);
-            var bil26 = new Dieselbil(100500, 2015, 26, 30);
-            var bil100 = new Dieselbil(100500, 2015, 100, 12);
+            var bil25 = new Dieselbil(100500, 2015, 25, 30,false);
+            var bil26 = new Dieselbil(100500, 2015, 26, 30, false);
+            var bil100 = new Dieselbil(100500, 2015, 100, 12, false);
 
             Assert.AreEqual(bil25.GrønAfgift(), 5000);//tester grænsen
             Assert.AreEqual(bil26.GrønAfgift(), 2500);
