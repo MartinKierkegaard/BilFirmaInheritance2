@@ -53,6 +53,10 @@ namespace RecapNedarvning
             {
                 return 8000;
             }
+            if (this.KmPrLiter > 15 && this.KmPrLiter <= 25)
+            {
+                return 4000;
+            }
 
             if (PartikelFilter)
             {
