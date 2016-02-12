@@ -35,8 +35,10 @@ namespace RecapNedarvning
         /// <returns></returns>
         public override int GrønAfgift()
         {
+            //return base.GrønAfgift() +1000;
             return 0;
         }
+
 
         /// <summary>
         /// registreringsafgiften for elbil

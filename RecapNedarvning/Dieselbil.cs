@@ -42,6 +42,21 @@ namespace RecapNedarvning
         /// <returns></returns>
         public override int GrønAfgift()
         {
+            int afgift = 0;
+
+            if (PartikelFilter)
+            {
+                
+            }
+
+            // her skal der beregnes noget grøn afgift
+
+            //if (afgift <= 0)
+            //{
+            //    throw new GrønAfgiftException();
+                
+            //}
+
             return base.GrønAfgift() + 1000;
         }
 
