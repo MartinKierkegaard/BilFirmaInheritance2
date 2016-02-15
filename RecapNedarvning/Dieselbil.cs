@@ -57,16 +57,19 @@ namespace RecapNedarvning
 
             if (this.KmPrLiter >= 5 && this.KmPrLiter <= 15)
             {
-                return partikelFilterAfgift+8000;
+                return partikelFilterAfgift + 8000;
             }
+
             if (this.KmPrLiter > 15 && this.KmPrLiter <= 25)
             {
-                return partikelFilterAfgift+4000;
+                return partikelFilterAfgift + 4000;
             }
             else
             {
-                return partikelFilterAfgift+1500;
+                return partikelFilterAfgift + 1500;
             }
+
+            return partikelFilterAfgift;
         }
 
         /// <summary>
